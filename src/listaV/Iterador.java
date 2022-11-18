@@ -2,25 +2,21 @@ package listaV;
 
 import java.util.Iterator;
 
-public class Iterador<T> implements  Iterator<T> {
-	
+public class Iterador<T> implements  Iterator {
 	private Nodo<T> cursor;
-	
-	
-	
+
+	public Iterador(Nodo<T> inicio) {
+		this.cursor = inicio;
+	}
+
 	@Override
 	public boolean hasNext() {
-		// TODO Auto-generated method stub
-		return this.cursor != null;
+		return this.cursor.getSiguiente() != null;
 	}
 
 	@Override
 	public T next() {
-		// TODO Auto-generated method stub
-		T valor = cursor.getValor();
-		cursor=cursor.getSiguiente();
-		return valor;
+		cursor = cursor.getSiguiente();
+		return cursor.getValor();
 	}
-	
-
 }

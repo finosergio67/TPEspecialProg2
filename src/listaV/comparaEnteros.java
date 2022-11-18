@@ -9,5 +9,4 @@ public class comparaEnteros implements Comparator<Integer> {
 		// TODO Auto-generated method stub
 		return (o1-o2);
 	}
-
 }
