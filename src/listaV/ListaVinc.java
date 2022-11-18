@@ -1,5 +1,7 @@
 package listaV;
 
+
+
 import javax.swing.text.html.HTMLDocument;
 import java.util.Comparator;
 import java.util.Iterator;
@@ -13,7 +15,7 @@ public class ListaVinc<T> implements Iterable {
 		this.orden=orden;
 		
 	}
-<<<<<<< HEAD
+//<<<<<<< HEAD
 	
 	public void setOrden(Comparator<T> orden) {
 		this.orden=orden;
@@ -21,30 +23,43 @@ public class ListaVinc<T> implements Iterable {
 	}
 	
 	
-=======
+//=======
 
->>>>>>> e91b3db265ffd9f10f3df1d5e28b2bb11ec1cfe5
-	public void insertarOrdenado(T nNuevo) {	
-		Nodo<T> nodoNuevo = new Nodo<T>(nNuevo);
-		if (this.primerNodo == null) {
+//>>>>>>> e91b3db265ffd9f10f3df1d5e28b2bb11ec1cfe5
+	public void insertarOrdenado(Nodo<T> nNuevo) {
+		
+		Nodo<T> nodoNuevo = new Nodo<T>(nNuevo.getValor());
+		
+		Nodo<T> aux = this.primerNodo;
+		Nodo<T> ant = new Nodo();
+		if (this.primerNodo == null || (this.orden.compare(primerNodo.getValor(),nodoNuevo.getValor()) > 0)) {
+			
+			aux=primerNodo;
 			this.primerNodo=nodoNuevo;
+			nodoNuevo.setSiguiente(aux);
 		} else {
-			Nodo<T> aux = this.primerNodo;
-			Nodo<T> ant = new Nodo<T>();
-			while(aux.getSiguiente() != null && (this.orden.compare(aux.getValor(),nodoNuevo.getValor())) < 0) {
+			
+		
+				while(aux.getSiguiente() != null && (this.orden.compare(aux.getValor(),nodoNuevo.getValor())) < 0) {
 				ant=aux;
 				aux=aux.getSiguiente();
 			}
 			if(aux.getSiguiente() == null)
 			{
-				if (this.orden.compare(aux.getValor(),nodoNuevo.getValor()) < 0)
+				if (this.orden.compare(aux.getValor(),nodoNuevo.getValor()) < 0) {
 					aux.setSiguiente(nodoNuevo);
+				} else {
+			
+					ant.setSiguiente(nodoNuevo);
+					nodoNuevo.setSiguiente(aux);
+					} 
 			} else {
 				ant.setSiguiente(nodoNuevo);
 				nodoNuevo.setSiguiente(aux);
 			}
 		}
 	}
+	
 	
 	public void EliminarPosicion(int pos) {
 		if(pos==1)
@@ -59,21 +74,20 @@ public class ListaVinc<T> implements Iterable {
 				if (aux.getSiguiente() != null)
 					aux.setSiguiente(aux.getSiguiente().getSiguiente());
 				/*else
-					System.out.println("Pos excede el tamaño de la Lista");*/
+					System.out.println("Pos excede el tamaï¿½o de la Lista");*/
 		
 		}
 	}
 	
 	public void EliminarOcurrencias(T valor) {
-		if(primerNodo.getValor() == valor)
-			primerNodo.setSiguiente(primerNodo.getSiguiente());
+		
 		Nodo<T> aux = this.primerNodo;
 		while(aux.getSiguiente() != null ) {
 			int res = this.orden.compare(valor, aux.getValor());
 				if ( res == 0)
 					aux.setSiguiente(aux.getSiguiente().getSiguiente());
 		}
-<<<<<<< HEAD
+//<<<<<<< HEAD
 	}
 
 	
@@ -83,7 +97,7 @@ public class ListaVinc<T> implements Iterable {
 		aux= primerNodo;
 		primerNodo=null;
 		while (aux != null){
-			insertarOrdenado(aux.getValor());
+			insertarOrdenado(aux);  // getvalor
 			aux=aux.getSiguiente();
 			
 		}
@@ -108,16 +122,18 @@ public class ListaVinc<T> implements Iterable {
 	public void recorrer() {
 		Nodo<T> aux = this.primerNodo;
 		while (aux!= null) {
+			System.out.println(" ---  " + aux.getValor());
 			aux=aux.getSiguiente();
-			System.out.println("Nodo" + aux.getValor());
+
 		}
-			
-=======
+	}		
+//=======
 
 
 	@Override
 	public Iterator iterator() {
 		return new Iterador<T> (primerNodo);
->>>>>>> e91b3db265ffd9f10f3df1d5e28b2bb11ec1cfe5
+//>>>>>>> e91b3db265ffd9f10f3df1d5e28b2bb11ec1cfe5
 	}
 }
+

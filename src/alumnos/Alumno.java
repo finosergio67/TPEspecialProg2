@@ -1,10 +1,12 @@
 package alumnos;
 
-import Universidad.ElementoAlumno;
+
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
+
+import Universidad.ElementoAlumno;
 
 public class Alumno extends ElementoAlumno {
 	
@@ -16,7 +18,7 @@ public class Alumno extends ElementoAlumno {
 
 
 public Alumno (String nombre, String apellido, int dno, LocalDate fechaNac) {
-<<<<<<< HEAD
+// <<<<<<< HEAD
 	
 	this.nombre=nombre;
 	this.apellido= apellido;
@@ -68,7 +70,7 @@ public void setFechaNac(LocalDate fechaNac) {
 
 
 	
-=======
+/*//=======
 
 	this.nombre = nombre;
 	this.apellido = apellido;
@@ -76,12 +78,12 @@ public void setFechaNac(LocalDate fechaNac) {
 	this.fechaNac = fechaNac;
 	ArrayList<String> intreses = new ArrayList<>();
 	}
-
+*/ 
 	@Override
 	public int cantAlumnos() {
 		return 1;
 	}
->>>>>>> e91b3db265ffd9f10f3df1d5e28b2bb11ec1cfe5
+//>>>>>>> e91b3db265ffd9f10f3df1d5e28b2bb11ec1cfe5
 }
 
 
