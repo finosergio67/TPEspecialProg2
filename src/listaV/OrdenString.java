@@ -9,11 +9,4 @@ public class OrdenString extends orden {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
-	@Override
-	public int cumple() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
 }

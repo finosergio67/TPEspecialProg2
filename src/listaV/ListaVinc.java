@@ -1,21 +1,19 @@
 package listaV;
 
+import javax.swing.text.html.HTMLDocument;
 import java.util.Comparator;
+import java.util.Iterator;
 
-public class ListaVinc<T> { 
+public class ListaVinc<T> implements Iterable {
 	private Nodo<T> primerNodo;
 	private  Comparator<T> orden;
-	
 
 	public ListaVinc (Nodo<T> nodo, Comparator<T> orden){
 		this.primerNodo = nodo;
 		this.orden=orden;
 		
 	}
-	
-	
-	
-	
+
 	public void insertarOrdenado(T nNuevo) {	
 		Nodo<T> nodoNuevo = new Nodo(nNuevo);
 		if (this.primerNodo == null) {
@@ -37,8 +35,6 @@ public class ListaVinc<T> {
 			}
 		}
 	}
-	
-	
 	
 	public void EliminarPosicion(int pos) {
 		if(pos==1)
@@ -67,8 +63,10 @@ public class ListaVinc<T> {
 					aux.setSiguiente(aux.getSiguiente().getSiguiente());
 		
 		}
-	
-	
-	
-	
+
+
+	@Override
+	public Iterator iterator() {
+		return new Iterador<T> (primerNodo);
+	}
 }
