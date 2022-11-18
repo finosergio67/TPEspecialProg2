@@ -16,31 +16,57 @@ public class ListaVinc<T> {
 	
 	
 	
-	public void insertarOrdenado(Nodo<T> nNuevo) {
-		
+	public void insertarOrdenado(T nNuevo) {	
 		Nodo<T> nodoNuevo = new Nodo(nNuevo);
 		if (this.primerNodo == null) {
 			this.primerNodo=nodoNuevo;
 		} else {
-			Nodo<T> sig = new Nodo();
+			Nodo<T> aux = this.primerNodo;
 			Nodo<T> ant = new Nodo();
-			sig=primerNodo;
-			while(sig.getSiguiente() != null && (this.orden.compare(sig.getValor(),nNuevo.getValor())) > 0) {
-				ant=sig;
-				sig=sig.getSiguiente();
+			while(aux.getSiguiente() != null && (this.orden.compare(aux.getValor(),nodoNuevo.getValor())) < 0) {
+				ant=aux;
+				aux=aux.getSiguiente();
 			}
-			if(sig.getSiguiente() == null){
-				nNuevo =  sig.getSiguiente();
+			if(aux.getSiguiente() == null)
+			{
+				if (this.orden.compare(aux.getValor(),nodoNuevo.getValor()) < 0)
+					aux.setSiguiente(nodoNuevo);
 			} else {
-				ant = sig;
-				sig = sig.getSiguiente();
-				nNuevo = ant.getSiguiente();
-				sig = nNuevo.getSiguiente();
+				ant.setSiguiente(nodoNuevo);
+				nodoNuevo.setSiguiente(aux);
 			}
 		}
-		
-		
 	}
+	
+	
+	
+	public void EliminarPosicion(int pos) {
+		if(pos==1)
+			this.primerNodo = primerNodo.getSiguiente();
+		else{
+			Nodo<T> aux = this.primerNodo;
+			int i = 1; 
+
+			while(aux.getSiguiente() != null && (i+1 < pos)) 
+				i++;
+			
+				if (aux.getSiguiente() != null)
+					aux.setSiguiente(aux.getSiguiente().getSiguiente());
+				/*else
+					System.out.println("Pos excede el tamaño de la Lista");*/
+		
+		}
+	}
+	
+	public void EliminarOcurrencias(T valor) {
+		if(primerNodo.getValor() == valor)
+			primerNodo.setSiguiente(primerNodo.getSiguiente());
+		Nodo<T> aux = this.primerNodo;
+		while(aux.getSiguiente() != null )
+				if (aux.getSiguiente().getValor() == valor)
+					aux.setSiguiente(aux.getSiguiente().getSiguiente());
+		
+		}
 	
 	
 	
