@@ -10,6 +10,11 @@ public class Nodo<T> {
 		
 	}
 	
+	public Nodo () {
+		this.valor= null ;
+		this.siguiente = null;
+		
+	}
 
 	
 	public T getValor() {
@@ -19,7 +24,7 @@ public class Nodo<T> {
 
 
 	public Nodo<T> getSiguiente() {
-		return siguiente;
+		return this.siguiente;
 	}
 
 
