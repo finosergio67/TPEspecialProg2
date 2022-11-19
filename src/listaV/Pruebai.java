@@ -9,21 +9,23 @@ import alumnos.Alumno;
 
 public class Pruebai {
 
+    
+
+    public static void main(String[] args) {
     Comparator orden = new comparaAlumnosCantidad();
-    Nodo<ElementoAlumno> primero = new Nodo<ElementoAlumno>();
-    ListaVinc<ElementoAlumno> lista = new ListaVinc<ElementoAlumno>(primero,orden);
+    ListaVinc<ElementoAlumno> lista = new ListaVinc<ElementoAlumno>(null,orden);
     GrupoAlumnos unicen = new GrupoAlumnos("unicen");
     GrupoAlumnos humanas = new GrupoAlumnos("humanas");
     GrupoAlumnos exactas = new GrupoAlumnos("exactas");
-    GrupoAlumnos Historia = new GrupoAlumnos("Historia");
+    GrupoAlumnos historia = new GrupoAlumnos("Historia");
     unicen.addElemento(exactas);
     unicen.addElemento(humanas);
     String [] interesesJhon = {"intercambio"};
     Alumno John = new Alumno("Jhon","Doe",120000, interesesJhon);
-    unicen.addElemento(Jhon);
+    unicen.addElemento(John);
     String [] interesesMora = {"psicologia","Freud"};
-    Alumno Mora = new Alumno("Mora", "Diaz", 37124445, interesesMora);
-    humanas.addElemento(historia)
+    Alumno mora = new Alumno("Mora", "Diaz", 37124445, interesesMora);
+    humanas.addElemento(historia);
     humanas.addElemento(mora);
     String [] interesesRoman = {"Argentina"};
     Alumno Roman = new Alumno("Roman","Bazan",32555111, interesesRoman);
@@ -41,7 +43,7 @@ public class Pruebai {
     exactas.addElemento(Juana);
     exactas.addElemento(Fede);
     GrupoAlumnos Olimpiadas = new GrupoAlumnos("OlimpiadasMatematica");
-    GrupoAlumnos fibo = new GrupoAlumnos("LosFibo");
+    GrupoAlumnos fibo = new GrupoAlumnos("fibo");
     GrupoAlumnos Matea2 = new GrupoAlumnos("Matea2");
     String [] interesesJuan = {"sucesiones","algebra"};
     Alumno Juan = new Alumno("Juan","Juarez",332224444, interesesJuan);
@@ -54,31 +56,31 @@ public class Pruebai {
     String [] interesesIsaac = {"sucesiones"};
     Alumno Isaac = new Alumno("Isaac","Newton",12343565, interesesIsaac);
     Olimpiadas.addElemento(Matea2);
-    Olimpiadas.addElemento(LosFibo);
+    Olimpiadas.addElemento(fibo);
     Matea2.addElemento(Juan);
     Matea2.addElemento(Julio);
-    LosFibo.addElemento(Bernardino);
-    LosFibo.addElemento(Jose);
-    LosFibo.addElemento(Isaac);
-    lista.addElemento(unicen);
-    lista.addElemento(humanas);
-    lista.addElemento(exactas);
-    lista.addElemento(historia);
-    lista.addElemento(Jhon);
-    lista.addElemento(Mora);
-    lista.addElemento(Rivas);
-    lista.addElemento(Roman);
-    lista.addElemento(Martin);
-    lista.addElemento(Flora);
-    lista.addElemento(Fede);
-    lista.addElemento(Juana);
-    lista.addElemento(Olimpiadas);
-    lista.addElemento(LosFibo);
-    lista.addElemento(Isaac);
-    lista.addElemento(Jose)
-    lista.addElemento(Julio);
-    lista.addElemento(Bernardino);
-    lista.addElemento(Matea2);
-    lista.addElemento(Juan);
-
+    fibo.addElemento(Bernardino);
+    fibo.addElemento(Jose);
+    fibo.addElemento(Isaac);
+    lista.insertarOrdenado(new Nodo<ElementoAlumno>(humanas));
+    lista.insertarOrdenado(new Nodo<ElementoAlumno>(unicen));
+    lista.insertarOrdenado(new Nodo<ElementoAlumno> (exactas));
+    lista.insertarOrdenado(new Nodo<ElementoAlumno> (historia));
+    lista.insertarOrdenado(new Nodo<ElementoAlumno> (John));
+    lista.insertarOrdenado(new Nodo<ElementoAlumno> (mora));
+    lista.insertarOrdenado(new Nodo<ElementoAlumno> (Flora));
+    lista.insertarOrdenado(new Nodo<ElementoAlumno> (Roman));
+    lista.insertarOrdenado(new Nodo<ElementoAlumno> (Martin));
+    lista.insertarOrdenado(new Nodo<ElementoAlumno> (Flora));
+    lista.insertarOrdenado(new Nodo<ElementoAlumno> (Fede));
+    lista.insertarOrdenado(new Nodo<ElementoAlumno> (Juan));
+    lista.insertarOrdenado(new Nodo<ElementoAlumno> (Olimpiadas));
+    lista.insertarOrdenado(new Nodo<ElementoAlumno> (fibo));
+    lista.insertarOrdenado(new Nodo<ElementoAlumno> (Isaac));
+    lista.insertarOrdenado(new Nodo<ElementoAlumno> (Jose));
+    lista.insertarOrdenado(new Nodo<ElementoAlumno> (Julio));
+    lista.insertarOrdenado(new Nodo<ElementoAlumno> (Bernardino));
+    lista.insertarOrdenado(new Nodo<ElementoAlumno> (Matea2));
+    lista.insertarOrdenado(new Nodo<ElementoAlumno> (Juan));
+    }
 }

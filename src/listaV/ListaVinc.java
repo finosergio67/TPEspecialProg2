@@ -33,13 +33,10 @@ public class ListaVinc<T> implements Iterable {
 		Nodo<T> aux = this.primerNodo;
 		Nodo<T> ant = new Nodo();
 		if (this.primerNodo == null || (this.orden.compare(primerNodo.getValor(),nodoNuevo.getValor()) > 0)) {
-			
 			aux=primerNodo;
 			this.primerNodo=nodoNuevo;
 			nodoNuevo.setSiguiente(aux);
 		} else {
-			
-		
 				while(aux.getSiguiente() != null && (this.orden.compare(aux.getValor(),nodoNuevo.getValor())) < 0) {
 				ant=aux;
 				aux=aux.getSiguiente();

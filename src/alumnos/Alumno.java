@@ -24,7 +24,7 @@ public Alumno (String nombre, String apellido, int dni, LocalDate fechaNac) {
 	this.apellido= apellido;
 	this.dni=dni;
 	this.fechaNac=fechaNac;
-	ArrayList<String> intereses= new ArrayList<String>();
+	this.intereses= new ArrayList<String>();
 	
 }
 
@@ -34,6 +34,7 @@ public Alumno (String nombre, String apellido, int dni,  String[] intereses) {
 		this.nombre=nombre;
 		this.apellido= apellido;
 		this.dni=dni;
+		this.intereses= new ArrayList<String>();
 		for (String s : intereses) {
 			this.intereses.add(s);
 		};	

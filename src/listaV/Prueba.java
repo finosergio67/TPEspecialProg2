@@ -18,8 +18,6 @@ public class Prueba {
 		Comparator<Integer> compEnt = new comparaEnteros();
 		ListaVinc listaNum = new ListaVinc(n1,compEnt);
 		
-
-		 
 		 Nodo<Integer> n3 = new Nodo(8);
 		 Nodo<Integer> n4 = new Nodo(99);
 		 Nodo<Integer> n5 = new Nodo(2);
@@ -30,8 +28,6 @@ public class Prueba {
 		 listaNum.insertarOrdenado(n5);
 		 
 		// listaNum.recorrer();
-		 
-		 
 		 
 		 Nodo<Integer> n6 = new Nodo(3);
 		 Nodo<Integer> n7 = new Nodo(9);
@@ -62,8 +58,6 @@ public class Prueba {
 		 listaStr.insertarOrdenado(ns5);
 		 listaStr.insertarOrdenado(ns6);
 
-		 listaStr.recorrer();
-		 
+		 listaStr.recorrer();	 
 	}
-
 }
