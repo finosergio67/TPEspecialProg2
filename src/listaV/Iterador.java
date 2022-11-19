@@ -11,12 +11,13 @@ public class Iterador<T> implements  Iterator {
 
 	@Override
 	public boolean hasNext() {
-		return this.cursor.getSiguiente() != null;
+		return this.cursor != null;
 	}
 
 	@Override
 	public T next() {
+		T valor  = cursor.getValor();
 		cursor = cursor.getSiguiente();
-		return cursor.getValor();
+		return valor;
 	}
 }

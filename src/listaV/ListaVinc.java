@@ -15,7 +15,7 @@ public class ListaVinc<T> implements Iterable {
 		this.orden=orden;
 		
 	}
-//<<<<<<< HEAD
+
 	
 	public void setOrden(Comparator<T> orden) {
 		this.orden=orden;
@@ -23,9 +23,7 @@ public class ListaVinc<T> implements Iterable {
 	}
 	
 	
-//=======
 
-//>>>>>>> e91b3db265ffd9f10f3df1d5e28b2bb11ec1cfe5
 	public void insertarOrdenado(Nodo<T> nNuevo) {
 		
 		Nodo<T> nodoNuevo = new Nodo<T>(nNuevo.getValor());
@@ -68,24 +66,29 @@ public class ListaVinc<T> implements Iterable {
 			Nodo<T> aux = this.primerNodo;
 			int i = 1; 
 
-			while(aux.getSiguiente() != null && (i+1 < pos)) 
+			while(aux.getSiguiente() != null && (i+1 < pos)) {
 				i++;
-			
+				aux= aux.getSiguiente();
+			}
 				if (aux.getSiguiente() != null)
 					aux.setSiguiente(aux.getSiguiente().getSiguiente());
-				/*else
-					System.out.println("Pos excede el tamaï¿½o de la Lista");*/
+				else
+					System.out.println("Posicion excede el tamaño de la Lista");
 		
 		}
 	}
 	
 	public void EliminarOcurrencias(T valor) {
 		
+		
 		Nodo<T> aux = this.primerNodo;
+		if(	this.orden.compare(valor, aux.getValor()) == 0) 
+			primerNodo=primerNodo.getSiguiente();
 		while(aux.getSiguiente() != null ) {
-			int res = this.orden.compare(valor, aux.getValor());
-				if ( res == 0)
+			int res = this.orden.compare(valor, aux.getSiguiente().getValor());
+			if ( res == 0)
 					aux.setSiguiente(aux.getSiguiente().getSiguiente());
+				aux=aux.getSiguiente();
 		}
 //<<<<<<< HEAD
 	}
@@ -105,6 +108,7 @@ public class ListaVinc<T> implements Iterable {
 	
 	public int primerOcurrencia(T valor) {
 		Nodo<T> aux = this.primerNodo;
+		System.out.println(valor);
 		int i=1;
 		while (aux != null) {
 			int res = this.orden.compare(valor, aux.getValor());
@@ -115,7 +119,8 @@ public class ListaVinc<T> implements Iterable {
 				i++;
 				}		
 			}
-		return 0;
+		System.out.println(valor + "  no se encuentra");
+		return -1;
 	}
 	
 	
@@ -127,13 +132,18 @@ public class ListaVinc<T> implements Iterable {
 
 		}
 	}		
-//=======
 
-
+	
+	
 	@Override
 	public Iterator iterator() {
 		return new Iterador<T> (primerNodo);
-//>>>>>>> e91b3db265ffd9f10f3df1d5e28b2bb11ec1cfe5
+
 	}
+	
+	
+	
+	
+	
 }
 
