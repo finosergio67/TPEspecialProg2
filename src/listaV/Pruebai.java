@@ -73,7 +73,7 @@ public class Pruebai {
     lista.insertarOrdenado(new Nodo<ElementoAlumno> (Martin));
     lista.insertarOrdenado(new Nodo<ElementoAlumno> (Flora));
     lista.insertarOrdenado(new Nodo<ElementoAlumno> (Fede));
-    lista.insertarOrdenado(new Nodo<ElementoAlumno> (Juan));
+    lista.insertarOrdenado(new Nodo<ElementoAlumno> (Juana));
     lista.insertarOrdenado(new Nodo<ElementoAlumno> (Olimpiadas));
     lista.insertarOrdenado(new Nodo<ElementoAlumno> (fibo));
     lista.insertarOrdenado(new Nodo<ElementoAlumno> (Isaac));
@@ -82,5 +82,9 @@ public class Pruebai {
     lista.insertarOrdenado(new Nodo<ElementoAlumno> (Bernardino));
     lista.insertarOrdenado(new Nodo<ElementoAlumno> (Matea2));
     lista.insertarOrdenado(new Nodo<ElementoAlumno> (Juan));
+    for (Object o : lista) {
+        ElementoAlumno e = (ElementoAlumno) o; //Nodo a elementoAlumno?
+        e.imprimir();
+    }
     }
 }

@@ -102,6 +102,11 @@ public void setFechaNac(LocalDate fechaNac) {
 		return 1;
 	}
 //>>>>>>> e91b3db265ffd9f10f3df1d5e28b2bb11ec1cfe5
+
+	@Override
+	public void imprimir() {
+		System.out.println("   "+ this.nombre);		
+	}
 }
 
 

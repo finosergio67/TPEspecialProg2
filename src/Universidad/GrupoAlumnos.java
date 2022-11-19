@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 
 public class GrupoAlumnos extends ElementoAlumno{
+    
 
     private String nombre;
     private ListaVinc<ElementoAlumno> grupos;
@@ -31,4 +32,15 @@ public class GrupoAlumnos extends ElementoAlumno{
     public void addElemento(ElementoAlumno e){
         grupos.insertarOrdenado(new Nodo<ElementoAlumno>(e));
     }
+
+    @Override
+    public void imprimir() {
+        System.out.println("   " + this.nombre);
+        for (Object o : grupos) {
+            ElementoAlumno e = (ElementoAlumno) o;
+            e.imprimir();
+        }
+    }
+
+
 }
