@@ -81,6 +81,7 @@ public class Prueba {
 		 listaStr.insertarOrdenado(ns2);
 		 listaStr.insertarOrdenado(ns3);
 		 listaStr.insertarOrdenado(ns4);
+
 		 
 		 
 		 for (Object o: listaStr){  /// Nota : Utilizamos el metodo recorrer(), 
@@ -102,6 +103,9 @@ public class Prueba {
 		 
 		 Comparator<Object> compInv = new ComparadorInverso(compStr);
 		 listaStr.setOrden(compInv);
+
+	
+
 		 listaStr.recorrer();
 		 
 	}

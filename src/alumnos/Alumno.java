@@ -17,22 +17,39 @@ public class Alumno extends ElementoAlumno {
 	private ArrayList<String> intereses;
 
 
-public Alumno (String nombre, String apellido, int dno, LocalDate fechaNac) {
+public Alumno (String nombre, String apellido, int dni, LocalDate fechaNac) {
 // <<<<<<< HEAD
 	
 	this.nombre=nombre;
 	this.apellido= apellido;
 	this.dni=dni;
 	this.fechaNac=fechaNac;
-	ArrayList<String> intreses= new ArrayList<>();
+	ArrayList<String> intereses= new ArrayList<String>();
 	
 }
 
+public Alumno (String nombre, String apellido, int dni,  String[] intereses) {
+	// <<<<<<< HEAD
+		
+		this.nombre=nombre;
+		this.apellido= apellido;
+		this.dni=dni;
+		for (String s : intereses) {
+			this.intereses.add(s);
+		};	
+	}
+
+public void addInteres(String interes){
+	intereses.add(interes);
+}
+
+public void removeInteres(String interes){
+	intereses.remove(interes);
+}
 
 public String getNombre() {
 	return nombre;
 }
-
 
 public void setNombre(String nombre) {
 	this.nombre = nombre;
