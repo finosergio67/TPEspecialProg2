@@ -1,6 +1,7 @@
 package Universidad;
 
 import listaV.ListaVinc;
+import listaV.Nodo;
 
 import java.util.ArrayList;
 
@@ -8,6 +9,10 @@ public class GrupoAlumnos extends ElementoAlumno{
 
     private String nombre;
     private ListaVinc<ElementoAlumno> grupos;
+
+    public GrupoAlumnos(String nombre) {
+        this.nombre = nombre;
+    }
 
     @Override
     public int cantAlumnos() {
@@ -20,4 +25,7 @@ public class GrupoAlumnos extends ElementoAlumno{
         return aux;
     }
 
+    public void addElemento(ElementoAlumno e){
+        grupos.insertarOrdenado(new Nodo<ElementoAlumno>(e));
+    }
 }

@@ -61,12 +61,8 @@ public class Prueba {
 		 listaStr.insertarOrdenado(ns4);
 		 listaStr.insertarOrdenado(ns5);
 		 listaStr.insertarOrdenado(ns6);
-		 
-		
-		listaStr.recorrer();
-		 
-		 
-		 
+
+		 listaStr.recorrer();
 		 
 	}
 
