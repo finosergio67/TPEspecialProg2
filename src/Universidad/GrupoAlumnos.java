@@ -2,8 +2,10 @@ package Universidad;
 
 import listaV.ListaVinc;
 import listaV.Nodo;
+import listaV.comparaAlumnosCantidad;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class GrupoAlumnos extends ElementoAlumno{
 
@@ -12,6 +14,8 @@ public class GrupoAlumnos extends ElementoAlumno{
 
     public GrupoAlumnos(String nombre) {
         this.nombre = nombre;
+        Comparator orden = new comparaAlumnosCantidad();
+        this.grupos = new ListaVinc<ElementoAlumno>(null , orden);
     }
 
     @Override
