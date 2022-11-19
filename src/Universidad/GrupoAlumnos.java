@@ -5,6 +5,7 @@ import listaV.Nodo;
 import listaV.comparaAlumnosCantidad;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class GrupoAlumnos extends ElementoAlumno{
 
